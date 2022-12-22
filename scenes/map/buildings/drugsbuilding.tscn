@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/map/buildings/basebuilding.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scripts/map/buildings/drugsbuilding.gd" type="Script" id=2]
+[ext_resource path="res://art/map/buildings/Swat building.png" type="Texture" id=3]
+
+[node name="drugsbuilding" instance=ExtResource( 1 )]
+
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="." index="3"]
+
+texture = ExtResource( 3 )
+
+[node name="base" type="KinematicBody2D" parent="." index="4"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="base" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -18.0099, 406.543, 242.148, 262.348, 242.91, 176.315, -2.57019, 41.8424, -280.54, 175.412, -279.951, 258.755 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="5"]
+
+build_mode = 0
+polygon = PoolVector2Array( -278.938, 140.677, -279.84, -325.915, -16.3104, -476.632, 240, -327.72, 325.737, -350.282, 358.227, -220.322, 331.152, -73.215, 297.76, -57.8725, 240.902, -83.1425, 240, 141.58 )
+
+[connection signal="area_entered" from="." to="." method="_on_drugsbuilding_area_entered"]
+
+[connection signal="area_exited" from="." to="." method="_on_drugsbuilding_area_exited"]
+
+[connection signal="body_entered" from="." to="." method="_on_drugsbuilding_body_entered"]
+
+[connection signal="body_exited" from="." to="." method="_on_drugsbuilding_body_exited"]
+
+

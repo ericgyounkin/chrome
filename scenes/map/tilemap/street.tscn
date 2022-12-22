@@ -1,0 +1,126 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://art/map/street/blank.png" type="Texture" id=1]
+[ext_resource path="res://art/map/street/bottomrightsidewalkcorner.png" type="Texture" id=2]
+[ext_resource path="res://art/map/street/bottomsidewalk.png" type="Texture" id=3]
+[ext_resource path="res://art/map/street/bottomsidewalkcorner.png" type="Texture" id=4]
+[ext_resource path="res://art/map/street/downleftturnroad.png" type="Texture" id=5]
+[ext_resource path="res://art/map/street/downrightturnroad.png" type="Texture" id=6]
+[ext_resource path="res://art/map/street/leftsidewalk.png" type="Texture" id=7]
+[ext_resource path="res://art/map/street/leftturnroad.png" type="Texture" id=8]
+[ext_resource path="res://art/map/street/rightroad.png" type="Texture" id=9]
+[ext_resource path="res://art/map/street/rightsidewalk.png" type="Texture" id=10]
+[ext_resource path="res://art/map/street/rightturnroad.png" type="Texture" id=11]
+[ext_resource path="res://art/map/street/sidewalkcornerbottom.png" type="Texture" id=12]
+[ext_resource path="res://art/map/street/sidewalkcornerleft.png" type="Texture" id=13]
+[ext_resource path="res://art/map/street/sidewalkcornerright.png" type="Texture" id=14]
+[ext_resource path="res://art/map/street/sidewalkcornertop.png" type="Texture" id=15]
+[ext_resource path="res://art/map/street/toprightsidewalkcorner.png" type="Texture" id=16]
+[ext_resource path="res://art/map/street/topsidewalk.png" type="Texture" id=17]
+[ext_resource path="res://art/map/street/topsidewalkcorner.png" type="Texture" id=18]
+[ext_resource path="res://art/map/street/uproad.png" type="Texture" id=19]
+
+[node name="street" type="Node"]
+
+[node name="blank" type="Sprite" parent="." index="0"]
+
+position = Vector2( 677.368, 465.086 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Animation", "Material", "Offset", "Region", "Transform", "Visibility", "Z Index" ]
+
+[node name="bottomrightsidewalkcorner" type="Sprite" parent="." index="1"]
+
+position = Vector2( 466.146, 473.665 )
+texture = ExtResource( 2 )
+
+[node name="bottomsidewalk" type="Sprite" parent="." index="2"]
+
+position = Vector2( 282.374, 458.963 )
+texture = ExtResource( 3 )
+
+[node name="bottomsidewalkcorner" type="Sprite" parent="." index="3"]
+
+position = Vector2( 80.2234, 456.023 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="downleftturnroad" type="Sprite" parent="." index="4"]
+
+position = Vector2( 832.222, 320.766 )
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Animation", "Offset" ]
+
+[node name="downrightturnroad" type="Sprite" parent="." index="5"]
+
+position = Vector2( 646.979, 316.355 )
+texture = ExtResource( 6 )
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="leftsidewalk" type="Sprite" parent="." index="6"]
+
+position = Vector2( 470.557, 317.825 )
+texture = ExtResource( 7 )
+
+[node name="leftturnroad" type="Sprite" parent="." index="7"]
+
+position = Vector2( 285.314, 311.21 )
+texture = ExtResource( 8 )
+
+[node name="rightroad" type="Sprite" parent="." index="8"]
+
+position = Vector2( 76.5479, 328.117 )
+texture = ExtResource( 9 )
+
+[node name="rightsidewalk" type="Sprite" parent="." index="9"]
+
+position = Vector2( 72.1374, 212.707 )
+texture = ExtResource( 10 )
+
+[node name="rightturnroad" type="Sprite" parent="." index="10"]
+
+position = Vector2( 256.645, 185.509 )
+texture = ExtResource( 11 )
+
+[node name="sidewalkcornerbottom" type="Sprite" parent="." index="11"]
+
+position = Vector2( 444.094, 198.741 )
+texture = ExtResource( 12 )
+
+[node name="sidewalkcornerleft" type="Sprite" parent="." index="12"]
+
+position = Vector2( 627.132, 198.741 )
+texture = ExtResource( 13 )
+
+[node name="sidewalkcornerright" type="Sprite" parent="." index="13"]
+
+position = Vector2( 826.341, 194.33 )
+texture = ExtResource( 14 )
+
+[node name="sidewalkcornertop" type="Sprite" parent="." index="14"]
+
+position = Vector2( 792.527, 55.3977 )
+texture = ExtResource( 15 )
+_sections_unfolded = [ "Animation", "Material", "Offset", "Region", "Transform", "Visibility", "Z Index" ]
+
+[node name="toprightsidewalkcorner" type="Sprite" parent="." index="15"]
+
+position = Vector2( 605.079, 49.517 )
+texture = ExtResource( 16 )
+
+[node name="topsidewalk" type="Sprite" parent="." index="16"]
+
+position = Vector2( 418.366, 45.1064 )
+texture = ExtResource( 17 )
+
+[node name="topsidewalkcorner" type="Sprite" parent="." index="17"]
+
+position = Vector2( 235.328, 62.7486 )
+texture = ExtResource( 18 )
+
+[node name="uproad" type="Sprite" parent="." index="18"]
+
+position = Vector2( 68.4619, 91.4172 )
+texture = ExtResource( 19 )
+
+

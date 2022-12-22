@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://art/map/buildings/Swat building.png" type="Texture" id=1]
+
+[node name="temp" type="Node"]
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Visibility", "Z Index" ]
+
+[node name="base" type="KinematicBody2D" parent="." index="1"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+_sections_unfolded = [ "Collision", "Pickable", "Transform", "collision" ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="base" index="0"]
+
+position = Vector2( -1.59664, 27.1427 )
+build_mode = 0
+polygon = PoolVector2Array( -320.604, 209.408, -5.14066, 55.7222, 282.923, 214.197, -17.1154, 379.04 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="." index="2"]
+
+build_mode = 0
+polygon = PoolVector2Array( -280.229, 153.558, -279.877, -329.197, -16.3467, -477.207, 242.667, -334.667, 320, -346.667, 354.667, -229.333, 338.667, -80, 242.667, -25.3333, 242.205, 151.168 )
+
+

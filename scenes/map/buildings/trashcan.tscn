@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://art/map/buildings/g2099.png" type="Texture" id=1]
+[ext_resource path="res://scripts/map/buildings/trashcan.gd" type="Script" id=2]
+
+[node name="trashcan" type="Sprite"]
+
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" index="0"]
+
+position = Vector2( 1.57776, -59.4302 )
+build_mode = 0
+polygon = PoolVector2Array( -9.2627, 68.5509, -2.42559, 79.0695, 10.1967, 76.9658, 13.8783, 68.025, 5.98928, 63.2916, -5.58116, 65.9212 )
+
+

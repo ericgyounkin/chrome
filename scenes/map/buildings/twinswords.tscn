@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/map/buildings/basebuilding.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scripts/map/buildings/twinswords.gd" type="Script" id=2]
+[ext_resource path="res://art/map/buildings/twinswords.png" type="Texture" id=3]
+
+[node name="twinswords" instance=ExtResource( 1 )]
+
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="." index="3"]
+
+texture = ExtResource( 3 )
+
+[node name="base" type="KinematicBody2D" parent="." index="4"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="base" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -14.1583, 538.413, 137.271, 454.612, 138.741, 344.349, -16.3635, 188.509, -292.758, 285.541, -291.288, 389.189 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="5"]
+
+build_mode = 0
+polygon = PoolVector2Array( -298.164, 231.613, -296.657, -436.139, -250.349, -462.813, -251.43, -511.986, -164.432, -553.053, -164.432, -507.123, -12.0502, -595.742, 95.4814, -531.979, 96.5622, -382.3, 140.331, -356.362, 139.791, -207.223, 96.0218, -181.826, 97.1025, -106.716, 58.1966, -84.0209, 46.3087, -13.2337, 93.8604, 14.865, 95.4815, 165.085, 139.251, 194.805, 139.251, 246.679 )
+
+[connection signal="area_entered" from="." to="." method="_on_twinswords_area_entered"]
+
+[connection signal="area_exited" from="." to="." method="_on_twinswords_area_exited"]
+
+[connection signal="body_entered" from="." to="." method="_on_twinswords_body_entered"]
+
+[connection signal="body_exited" from="." to="." method="_on_twinswords_body_exited"]
+
+

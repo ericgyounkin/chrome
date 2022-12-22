@@ -1,0 +1,93 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://art/items/Sideviewbig9mil.png" type="Texture" id=1]
+[ext_resource path="res://scripts/items/weapons/gun.gd" type="Script" id=2]
+[ext_resource path="res://art/items/muzzleflash.png" type="Texture" id=3]
+[ext_resource path="res://sounds/items/pistolshot.ogg" type="AudioStream" id=4]
+
+[sub_resource type="CircleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 4000.0
+_sections_unfolded = [ "Resource" ]
+
+[node name="gun" type="Sprite"]
+
+visible = false
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+_sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
+
+[node name="mflash" type="Sprite" parent="." index="0"]
+
+visible = false
+position = Vector2( 49.2448, -20.3904 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Material", "Offset", "Region", "Visibility" ]
+
+[node name="flashtimer" type="Timer" parent="mflash" index="0"]
+
+process_mode = 1
+wait_time = 0.01
+one_shot = false
+autostart = false
+
+[node name="pistolshot" type="AudioStreamPlayer2D" parent="." index="1"]
+
+stream = ExtResource( 4 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="firetime" type="Timer" parent="." index="2"]
+
+process_mode = 1
+wait_time = 0.1
+one_shot = true
+autostart = false
+
+[node name="reloadtime" type="Timer" parent="." index="3"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = true
+autostart = false
+
+[node name="bursttimer" type="Timer" parent="." index="4"]
+
+process_mode = 1
+wait_time = 0.07
+one_shot = false
+autostart = false
+
+[node name="gunshot_radius" type="Area2D" parent="." index="5"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="gunshot_radius" index="0"]
+
+shape = SubResource( 1 )
+disabled = true
+_sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
+
+[connection signal="timeout" from="mflash/flashtimer" to="." method="_on_flashtimer_timeout"]
+
+[connection signal="timeout" from="reloadtime" to="." method="_on_reloadtime_timeout"]
+
+[connection signal="timeout" from="bursttimer" to="." method="_on_bursttimer_timeout"]
+
+[connection signal="body_entered" from="gunshot_radius" to="." method="_on_gunshot_radius_body_entered"]
+
+
